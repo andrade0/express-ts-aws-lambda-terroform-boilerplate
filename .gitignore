@@ -1,0 +1,10 @@
+/.idea
+node_modules
+cmd.txt
+terraform
+output.txt
+main.express.js
+.gitlab-ci.yml
+terraform.tfstate
+terraform.tfstate.backup
+.terraform
