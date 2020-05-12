@@ -19,12 +19,11 @@ key=v$PACKAGE_VERSION/lambda.zip
 
 object_exists=$(aws s3api head-object --bucket $bucket --key $key || true)
 if [ -z "$object_exists" ]; then
-  rm -rf ./code
-  rm ./lambda.zip
-  mkdir ./code
-  cp -r nodejs code/nodejs
-  zip -r ./lambda.zip code/*
-  aws s3 cp ./lambda.zip s3://$bucket/$key
+  cd nodejs
+  npm i
+  npm run deploy
+  cd ..
+  aws s3 cp ./nodejs/dist/dist.zip s3://$bucket/$key
   ./terraform apply -var="app_version=$PACKAGE_VERSION" -auto-approve
   rm -rf ./code
   rm ./lambda.zip

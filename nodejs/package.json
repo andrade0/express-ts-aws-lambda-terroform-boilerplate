@@ -1,19 +1,19 @@
 {
-  "name": "lambda-terraform-example",
-  "version": "1.0.51",
+  "name": "nodejs",
+  "version": "3.0.3",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "deploy": "node ./bin/lambda"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "scripts": {
-    "start": "node --version",
-    "deploy": "./deploy.sh"
-  },
   "dependencies": {
-    "async": "^3.2.0",
-    "aws-serverless-express": "^3.3.8",
-    "aws-xray-sdk": "^3.0.1",
-    "express": "^4.17.1"
+    "archiver": "^4.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "serverless-http": "^2.4.1"
   }
 }
