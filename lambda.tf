@@ -123,7 +123,7 @@ resource "aws_lambda_permission" "apigw" {
 }
 
 output "base_url" {
-  value = aws_api_gateway_deployment.example.invoke_url
+  value = "${aws_api_gateway_deployment.example.invoke_url}/v1/api"
 }
 
 output "version" {

@@ -1,10 +1,9 @@
 {
-  "name": "nodejs",
-  "version": "3.0.3",
+  "name": "lambda-express-boilerplate",
+  "version": "3.0.4",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "deploy": "node ./bin/lambda"
   },
   "keywords": [],
