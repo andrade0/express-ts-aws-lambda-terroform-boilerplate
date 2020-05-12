@@ -1,3 +1,3 @@
 #Lambda expressJs Boilerplate
 
-run `./deploy`
+run `./deploy` to deploy
