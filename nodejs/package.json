@@ -1,6 +1,6 @@
 {
-  "name": "lambda-terraform-andrade",
-  "version": "1.0.30",
+  "name": "lambda-terraform-example",
+  "version": "1.0.51",
   "description": "",
   "main": "main.js",
   "keywords": [],
