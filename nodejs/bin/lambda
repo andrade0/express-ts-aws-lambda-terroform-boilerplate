@@ -24,7 +24,6 @@ copyFolderRecursiveSync( "./node_modules", TEMP_FOLDER );
 
 copyFileSync( "./index.js", TEMP_FOLDER + "/index.js" );
 copyFileSync( "./app.js", TEMP_FOLDER + "/app.js" );
-copyFileSync( "./api.js", TEMP_FOLDER + "/api.js" );
 
 // 5. transpile code for us with Node 6.x (AWS Lambda max supported environment)
 

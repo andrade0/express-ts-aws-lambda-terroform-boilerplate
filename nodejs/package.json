@@ -1,6 +1,6 @@
 {
-  "name": "lambda-express-boilerplate",
-  "version": "3.0.4",
+  "name": "passwords",
+  "version": "1.0.9",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
     "archiver": "^4.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "md5": "^2.2.1",
     "serverless-http": "^2.4.1"
   }
 }

@@ -1,12 +1,12 @@
 const express = require('express');
 const cors = require('cors');
-const apiRouter = require('./api');
+const md5 = require('md5');
 const server = express();
 server.use(cors());
 server.use(express.urlencoded({ extended: true, strict: false }));
 server.use(express.json());
-server.get('/', (req, res) => {
- res.json({ message: 'Express API Powered by AWS Lambda!' });
+server.get('/:provider', (req, res) => {
+ const password = md5(req.params.provider).substr(0,6)+'A0!';
+ res.send(password);
 });
-server.use('/v1/api', apiRouter);
 module.exports = server;

@@ -14,7 +14,7 @@ FUNCTION_NAME=$(cat nodejs/package.json \
   | sed 's/[",]//g' \
   | tr -d '[[:space:]]')
 
-bucket=andrade0-bucket
+bucket=$FUNCTION_NAME-andrade0
 key=v$PACKAGE_VERSION/lambda.zip
 
 object_exists=$(aws s3api head-object --bucket $bucket --key $key || true)
@@ -23,8 +23,7 @@ if [ -z "$object_exists" ]; then
   npm i
   npm run deploy
   cd ..
-  aws s3 cp ./nodejs/dist/dist.zip s3://$bucket/$key
-  ./terraform apply -var="app_version=$PACKAGE_VERSION" -auto-approve
+  terraform apply -var="app_version=$PACKAGE_VERSION" -var="function_name=$FUNCTION_NAME" -auto-approve
   rm -rf ./code
   rm ./lambda.zip
 else
