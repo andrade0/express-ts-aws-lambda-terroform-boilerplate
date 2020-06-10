@@ -138,7 +138,7 @@ resource "aws_lambda_permission" "apigw" {
 }
 
 output "base_url" {
-  value = "${aws_api_gateway_deployment.deployment.invoke_url}"
+  value = "${aws_api_gateway_deployment.deployment.invoke_url}/xxxx"
 }
 
 output "version" {
