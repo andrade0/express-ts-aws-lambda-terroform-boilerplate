@@ -5,6 +5,7 @@ const fs          = require("fs");
 const path        = require("path");
 const archiver    = require("archiver");
 const {spawnSync} = require('child_process');
+const rimraf = require('rimraf');
 
 const TEMP_FOLDER   = "./temp";
 const OUTPUT_FOLDER = "./dist";
@@ -38,6 +39,7 @@ const archive = archiver("zip", {
 
 output.on('close', () => {
     console.log( `Written ${archive.pointer()} total bytes to ${OUTPUT_FILE}` );
+    rimraf.sync(TEMP_FOLDER);
 });
 
 archive.on('warning', ( err ) => {
@@ -55,6 +57,8 @@ archive.on('error', (err) => {
 archive.pipe( output );
 archive.directory( `${TEMP_FOLDER}`, false );
 archive.finalize();
+
+
 
 /* internal methods */
 
