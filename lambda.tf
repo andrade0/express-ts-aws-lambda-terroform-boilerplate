@@ -27,7 +27,8 @@ resource "aws_s3_bucket_object" "lambda_s3_object" {
 
 resource "aws_lambda_function" "lambda_function" {
   depends_on = [
-     aws_s3_bucket_object.lambda_s3_object
+     aws_s3_bucket_object.lambda_s3_object,
+     aws_iam_role.lambda_exec
   ]
 
   function_name = "${var.function_name}-function"
