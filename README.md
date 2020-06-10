@@ -15,6 +15,8 @@ change package name in nodejs/package.json
 
 edit nodejs/app.js with the express routes you want to do
 
-run `./deploy` to deploy
+run `./deploy.sh` to deploy
+
+run `./destroy.sh` to destroy
 
 ( make sure to change version in the package.json on every deploy )

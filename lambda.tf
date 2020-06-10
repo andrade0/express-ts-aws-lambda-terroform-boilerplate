@@ -17,10 +17,6 @@ resource "aws_s3_bucket" "s3bucket" {
     Name        = "${var.function_name}-andrade0"
     Environment = "Dev"
   }
-
-  #provisioner "local-exec"{
-  #  command = "aws s3 cp ./nodejs/dist/dist.zip s3://${aws_s3_bucket.s3bucket.bucket}/v${var.app_version}/v${var.function_name}.zip"
-  #}
 }
 
 resource "aws_s3_bucket_object" "lambda_s3_object" {
@@ -28,8 +24,6 @@ resource "aws_s3_bucket_object" "lambda_s3_object" {
   bucket     = "${aws_s3_bucket.s3bucket.id}"
   source     = "./nodejs/dist/dist.zip"
 }
-
-
 
 resource "aws_lambda_function" "lambda_function" {
   depends_on = [
