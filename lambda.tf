@@ -42,7 +42,7 @@ resource "aws_lambda_function" "lambda_function" {
   # is the name of the property under which the handler function was
   # exported in that file.
   handler = "index.server"
-  runtime = "nodejs10.x"
+  runtime = "nodejs12.x"
 
   role = aws_iam_role.lambda_exec.arn
 }
