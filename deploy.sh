@@ -19,7 +19,6 @@ npm i
 npm run deploy
 cd ..
 terraform apply -var="app_version=$PACKAGE_VERSION" -var="function_name=$FUNCTION_NAME" -auto-approve
-rm -rf ./code
 rm ./nodejs/dist/dist.zip
 
 

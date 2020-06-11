@@ -10,3 +10,4 @@ terraform.tfstate.backup
 terraform
 nodejs/dist/dist.zip
 nodejs/temp
+nodejs/dist

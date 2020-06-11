@@ -22,7 +22,7 @@ resource "aws_s3_bucket" "s3bucket" {
 
 resource "aws_s3_bucket_object" "lambda_s3_object" {
   key        = "v${var.app_version}/v${var.function_name}.zip"
-  bucket     = "${aws_s3_bucket.s3bucket.id}"
+  bucket     = aws_s3_bucket.s3bucket.id
   source     = "./nodejs/dist/dist.zip"
 }
 
